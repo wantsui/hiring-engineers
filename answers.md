@@ -108,7 +108,7 @@
 
 ## Visualizing Data
 
-  1. The code I wrote for the three charts in the Timeboard is in the ```custom_timeboard.rb``` file. There were no settings in the timeboard for 5 minutes, so instead I used 4 hours.
+  1. The code I wrote for the three charts in the Timeboard is in the ```custom_timeboard.rb``` file. There were no settings in the timeboard for 5 minutes, so instead I used 4 hours in my Timeboard.
     For convenience, here's the code in its entirety:
 
     # Custom Metric Dashboard
@@ -163,11 +163,10 @@
     res = dog.create_dashboard(dashboard_title, dashboard_description, graphs, nil)
 
     p "done!"
+  Dashboard
+    ![Custom Metric Dashboard](/screenshots/custom_metrics_dashboard.png)
+  Challenge: Since I didn't understand how the query worked, I set up a timeboard with the charts that I wanted and looked at the JSON to determine what my HTTP request needed to look like.
 
-   Challenge:
-   1. Since I didn't understand how the query worked, I set up a timeboard with the charts that I wanted and looked at the JSON to determine what my HTTP request needed to look like.
-  ![Custom Metric Dashboard](/screenshots/custom_metrics_dashboard.png)
-  
 2. This is what resulted after I annotated all the graphs and sent it to myself:
   ![Annotation 1](/screenshots/annotation_1.png)
   ![Annotation 2](/screenshots/annotation_2.png)
@@ -254,7 +253,7 @@
           "Posting Traces"
         end
        ```
-      Sinatra logs:
+      Sinatra - Terminal:
       ![Traces from Sinatra](/screenshots/sinatra_requests_term.png)
       *Note: I should have included bundle exec, but in this case it didn't affect anything! I haven't used Sinatra in a while.*
 
@@ -262,6 +261,7 @@
         ![Traces from Sinatra](/screenshots/sinatra_trace_search.png)
         ![Trace Metrics](/screenshots/trace_metrics.png)
       Link to the dashboard: https://p.datadoghq.com/sb/34448073f-c2c78c5d0ed355ca251d5bc225f0ef6d
+
       Here's a snapshot of the dashboard:
         ![Trace Metrics](/screenshots/dashboard_snapshot.png)
       Challenges:
