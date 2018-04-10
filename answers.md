@@ -87,14 +87,12 @@
 
       I updated ```custom_metric.yaml``` to:
 
-        ```
         init_config:
 
         instances:
           - username: datadog
             password: [auto generated password]
             min_collection_interval: 45
-        ```
 
       After reading the way Agent Checks are created https://docs.datadoghq.com/agent/agent_checks, I couldn't figure out how to send it at exactly 45 seconds, but initially, it looked like my checks were around 20 seconds apart. After the yaml update, it seemed to range from 40 to 60 seconds. In the screenshot below, there is a gap for a few minutes because I was trying to change the section and restart the agent.
       ![My Metric_45 seconds](/screenshots/my_metric_45_interval.png)
