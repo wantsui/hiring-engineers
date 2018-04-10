@@ -1,3 +1,4 @@
+
 ## Prerequisites - Setup the environment
   I set up the Datadog Agent on my Macbook. I primarily used Ruby, which is why I have a Gemfile set up with the gems that I used.
 
@@ -189,5 +190,6 @@
 ## Final Question
   After going through this challenge and reading the blog posts on Pokemon Go, Subway System, Restroom Availability, I think a useful way I would want to use Datadog in my life is monitoring the weather. It could be useful to get alerts about needing an umbrella and rain boots when there's a chance of snow or rain by setting up monitoring for precipitation. If there was a way to monitor trends, it would also be useful to know when to expect a longer commute, since the weather affects transportation. Finally, it could be interesting to compare how many days it's rained and snowed this year so far!
 
+I like this repo for its markdown formatting explanation: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 
-Thanks for reading!
+### Thanks for reading!
