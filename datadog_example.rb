@@ -1,6 +1,9 @@
 # This is a rewrite of the flask example from the README.
 # With sinatra and ruby, instead of python
 
+# Resource
+# http://sinatrarb.com/
+
 require 'sinatra'
 require 'ddtrace'
 require 'ddtrace/contrib/sinatra/tracer'
@@ -21,5 +24,3 @@ end
 get '/api/trace' do
   "Posting Traces"
 end
-
-# http://sinatrarb.com/
