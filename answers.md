@@ -114,6 +114,7 @@
 ## Visualizing Data
   1. The code I wrote for the three charts in the Timeboard is in the ```custom_timeboard.rb``` file. There were no settings in the timeboard for 5 minutes, so instead I used 4 hours.
     For convenience, here's the code in its entirety:
+
     ```
     # Custom Metric Dashboard
 
@@ -228,13 +229,42 @@
     1. It's hard to test the message when it's set for the weekends, because that means waiting out for the email.
 
 ## Collecting APM Data
-  1. I rewrote the Flask example to work with Ruby instead (without the portion of the code that is logging output), which can be seen in the ```datadog_example.rb``` file. I also ran ```DD_API_KEY=api_key_here /opt/datadog-agent/embedded/bin/trace-agent``` while Sinatra was running.
+  1. I rewrote the Flask example to work with Ruby instead (without the portion of the code that is logging output), which can be seen in the ```datadog_example.rb``` file. I also ran ```DD_API_KEY=api_key_here /opt/datadog-agent/embedded/bin/trace-agent``` while Sinatra was running. This is the code that's in datadog_example.rb:
+  ```
+  # This is a rewrite of the flask example from the README.
+  # With sinatra and ruby, instead of python
+
+  # Resource
+  # http://sinatrarb.com/
+
+  require 'sinatra'
+  require 'ddtrace'
+  require 'ddtrace/contrib/sinatra/tracer'
+  require 'byebug'
+
+  Datadog.configure do |c|
+    c.use :sinatra
+  end
+
+  get '/' do
+    "Entrypoint to the Application"
+  end
+
+  get '/api/apm' do
+    "Getting APM Started"
+  end
+
+  get '/api/trace' do
+    "Posting Traces"
+  end
+  ```
 
     Sinatra logs:
   ![Traces from Sinatra](/screenshots/sinatra_requests_term.png)
   *Note: I should have included bundle exec, but in this case it didn't affect anything! I haven't used Sinatra in a while.*
 
-    Dashboard
+  Dashboard
+
   ![Traces from Sinatra](/screenshots/sinatra_trace_search.png)
   ![Trace Metrics](/screenshots/trace_metrics.png)
 
